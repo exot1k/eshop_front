@@ -1,0 +1,30 @@
+
+.starSpan {
+  font-size: 25px;
+}
+
+.enabled {
+  padding: 1px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #FB8200;
+}
+
+.disabled {
+  padding: 1px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #CCCCCC;
+}
+
+.ratingCount {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  color: #5E6366;
+  margin: 5px;
+}
