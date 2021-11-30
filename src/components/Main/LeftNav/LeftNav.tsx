@@ -72,9 +72,9 @@ const Category = (props: any) => {
         if (!props.hasChild) {
             dispatch(actions.setShoesFilter(filter.sexType,
                 props.categoryType === 'shoesBrand' ?
-                    props.slug === filter.shoesBrand ? '' : props.slug : filter.shoesBrand,
+                    props.slug === filter.shoesBrand ? null : props.slug : filter.shoesBrand,
                 props.categoryType === 'shoesType' ?
-                    props.slug === filter.shoesType ? '' : props.slug : filter.shoesType))
+                    props.slug === filter.shoesType ?  null : props.slug : filter.shoesType))
         }
         setIcon(icon === active ? inactive : active)
     }

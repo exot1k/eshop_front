@@ -12,7 +12,8 @@ let initialState = {
         sexType: 'male' as (string | null),
         shoesBrand: null as (string | null),
         shoesType: null as (string | null)
-    }
+    },
+    pageFetching: true
 };
 
 export type initialStateType = typeof initialState
@@ -40,6 +41,18 @@ const shoesReducer = (state = initialState, action: ActionTypes): initialStateTy
                     return c
                 })
             })
+        case 'SET_CARD_FETCHING':
+            return ({
+                ...state,
+                shoes: state.shoes.map(c => {
+                    if (c.id === action.productId) {
+                        return {...c, fetching: action.fetching};
+                    }
+                    return c
+                })
+            })
+        case 'SET_PAGE_FETCHING':
+            return ({...state, pageFetching: action.pageFetching})
         default:
             return state
     }
@@ -55,25 +68,31 @@ export const actions = {
         ({type: 'CHANGE_PRODUCT', productId, qty, inCart} as const),
     setShoesFilter: (sexType: string | null, shoesBrand: string | null, shoesType: string | null) =>
         ({type: 'SET_SHOES_FILTER', filter: {sexType, shoesBrand, shoesType}} as const),
+    setCardFetching: (productId: number, fetching: boolean) =>
+        ({type: 'SET_CARD_FETCHING', productId, fetching} as const),
+    setPageFetching: (pageFetching: boolean) =>
+        ({type: 'SET_PAGE_FETCHING', pageFetching} as const),
 }
 
 export const getShoes = (): ThunkType => async (dispatch, getState) => {
+     dispatch(actions.setPageFetching(true))
     const filterParams = getState().shoes.filter
     let response = await api.getShoes(filterParams)
     if (response.status === 200) {
         dispatch(actions.setShoesData(response.data.results))
+         dispatch(actions.setPageFetching(false))
     }
 }
 
 export const getShoesType = (): ThunkType => async (dispatch) => {
-
+     dispatch(actions.setPageFetching(true))
     let response = await api.getShoesType()
     if (response.status === 200) {
         dispatch(actions.setShoesTypeData(response.data.results))
     }
 }
 export const getShoesBrand = (): ThunkType => async (dispatch) => {
-
+     dispatch(actions.setPageFetching(true))
     let response = await api.getShoesBrand()
     if (response.status === 200) {
         dispatch(actions.setShoesBrandData(response.data.results))
@@ -81,16 +100,20 @@ export const getShoesBrand = (): ThunkType => async (dispatch) => {
 }
 
 export const addProductToCart = (productId: number): ThunkType => async (dispatch) => {
+    dispatch(actions.setCardFetching(productId, true))
     let response = await cartApi.addProductToCart(productId)
     if (response.status === 200) {
         dispatch(actions.changeProductInCart(response.data.productId, 1))
+        dispatch(actions.setCardFetching(productId, false))
     }
 }
 
 export const changeProductQty = (productId: number, qty: number): ThunkType => async (dispatch) => {
+    dispatch(actions.setCardFetching(productId, true))
     let response = await cartApi.changeQty(productId, qty)
     if (response.status === 200) {
         dispatch(actions.changeProductInCart(response.data.productId, response.data.qty, response.data.inCart))
+        dispatch(actions.setCardFetching(productId, false))
     }
 }
 

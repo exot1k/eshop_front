@@ -1,3 +1,6 @@
+.opacity_0_5 {
+  opacity: 0.5;
+}
 
 .shoesCart {
   float: left;
@@ -16,6 +19,19 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 15px;
+  }
+
+  .cardLoader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: inherit;
+    height: inherit;
+    max-width: inherit;
+    min-height: inherit;
+    position: absolute;
+
   }
 
   .cartContent {
@@ -66,6 +82,14 @@
       width: 260px;
       height: 44px;
 
+
+      //.buttons {
+      //  text-align: center;
+      //  float: right;
+      //  height: 36px;
+      //
+      //}
+
       h2 {
         font-family: Red Hat Display;
         font-style: normal;
@@ -78,42 +102,40 @@
         font-family: Red Hat Display;
         font-style: normal;
         color: #151515;
-        margin: 0px;
-        float: left;
-        margin-left: 25px;
-        margin-top: 6px;
+        width: 25px;
+        display: inline-block;
+        margin: 0;
       }
 
-      .addButtonAdd, .addButtonRemove {
-        float: right;
-        width: 36px;
-        height: 36px;
-        right: 8px;
-        bottom: 1px;
-        box-sizing: border-box;
-        border-radius: 12px;
-        font-family: Roboto;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 15px;
-        line-height: 18px;
-        margin-left: 3px;
-        cursor: pointer;
-      }
-      .addButtonAdd{
-        background: rgba(91, 236, 88, 0.3);
-        //border: 2px solid #62bb70;
-        border: 2px solid rgba(91, 236, 88, 0.3);
-        color: #197210;
-      }
-      .addButtonRemove{
-        background: rgba(236, 81, 81, 0.3);
-        //border: 2px solid #c03b3b;
-        border: 2px solid rgba(236, 81, 81, 0.3);
-        color: #70010d;
-      }
+      //.addButtonAdd, .addButtonRemove {
+      //  float: initial;
+      //  width: 36px;
+      //  height: 36px;
+      //  box-sizing: border-box;
+      //  border-radius: 12px;
+      //  font-family: Roboto;
+      //  font-style: normal;
+      //  font-weight: bold;
+      //  font-size: 15px;
+      //  line-height: 18px;
+      //  cursor: pointer;
+      //}
 
-      button {
+      //.addButtonAdd {
+      //  background: rgba(91, 236, 88, 0.3);
+      //  //border: 2px solid #62bb70;
+      //  border: 2px solid rgba(91, 236, 88, 0.3);
+      //  color: #197210;
+      //}
+      //
+      //.addButtonRemove {
+      //  background: rgba(236, 81, 81, 0.3);
+      //  //border: 2px solid #c03b3b;
+      //  border: 2px solid rgba(236, 81, 81, 0.3);
+      //  color: #70010d;
+      //}
+
+      .createButton {
         float: right;
         width: 101px;
         height: 36px;
@@ -134,4 +156,5 @@
       }
     }
   }
+
 }

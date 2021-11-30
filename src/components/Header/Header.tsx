@@ -18,15 +18,15 @@ const Header = () => {
                             <h1>Shop</h1>
                         </NavLink>
                     </div>
-                    <div className={styles.centerSelect}>
-                        <select className={styles.selectCategory}>
-                            <option value={"q"}>All</option>
-                            <option value={"title"}>Title</option>
-                            <option value={"author"}>Author</option>
-                        </select>
-                        <input
-                            className={styles.searchField}/>
-                    </div>
+                    {/*<div className={styles.centerSelect}>*/}
+                    {/*    <select className={styles.selectCategory}>*/}
+                    {/*        <option value={"q"}>All</option>*/}
+                    {/*        <option value={"title"}>Title</option>*/}
+                    {/*        <option value={"author"}>Author</option>*/}
+                    {/*    </select>*/}
+                    {/*    <input*/}
+                    {/*        className={styles.searchField}/>*/}
+                    {/*</div>*/}
                     <div className={styles.rightHeader}>
                         <div className={styles.iconHeader}>
                             <NavLink to={'/profile'}>

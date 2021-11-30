@@ -5,14 +5,7 @@ import {Route, Switch} from "react-router-dom";
 import Main from "./components/Main/Main";
 import Profile from "./components/Profile/Profile";
 import Login from "./components/Login/Login";
-
-
-function Cart() {
-    return (<div>
-        cart
-    </div>);
-}
-
+import Cart from "./components/Cart/Cart";
 
 function App() {
 

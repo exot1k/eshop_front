@@ -24,6 +24,7 @@ export type shoesType = {
     type: shoesTypeType
     brand: shoesBrandType
     qty: number
+    fetching: boolean
 }
 
 export type shoesTypeType = {
