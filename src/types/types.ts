@@ -37,3 +37,11 @@ export type shoesBrandType = {
     image: null | string
     slug: string
 }
+
+export type cartItemsType = {
+    id: number
+    final_price: string
+    product: any
+    qty: number
+    fetching: boolean
+}

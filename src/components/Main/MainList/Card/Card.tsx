@@ -2,7 +2,7 @@ import * as React from 'react';
 import styles from "./Card.module.scss";
 import Rating from "../../../Utils/Rating/Rating";
 import {useDispatch} from "react-redux";
-import {addProductToCart} from "../../../../redux/ShoesReducer";
+import {addProductToCart, changeProductQty} from "../../../../redux/ShoesReducer";
 import Loader from "../../../Utils/Loader/Loader";
 import classnames from "classnames";
 import CartButtons from "../../../Utils/CartButtons/CartButtons";
@@ -10,8 +10,16 @@ import CartButtons from "../../../Utils/CartButtons/CartButtons";
 
 const Card = (props: any) => {
     const dispatch = useDispatch();
-    const onAddProduct = () => {
 
+    const onReduceProduct = () => {
+        let qty = props.qty
+        dispatch(changeProductQty(props.id, --qty))
+    }
+    const onRaiseProduct = () => {
+        let qty = props.qty
+        dispatch(changeProductQty(props.id, ++qty))
+    }
+    const onAddProduct = () => {
         dispatch(addProductToCart(props.id))
     }
 
@@ -40,10 +48,11 @@ const Card = (props: any) => {
                         <h2>{props.price} Р.</h2>
                         {
                             props.qty > 0 && props.in_cart ?
-                                <CartButtons id={props.id} qty={props.qty}/>
+                                <CartButtons id={props.id} qty={props.qty} onReduceProduct={onReduceProduct}
+                                             onRaiseProduct={onRaiseProduct}/>
                                 :
                                 <div>
-                                    <button className={styles.createButton}onClick={onAddProduct}>Add to cart</button>
+                                    <button className={styles.createButton} onClick={onAddProduct}>Add to cart</button>
                                 </div>
                         }
 

@@ -42,7 +42,6 @@ const MainList = () => {
 
     return (
         <div className={styles.mainList}>
-
             {shoes?.map((el: any) => (
                 <Card key={el.id} {...el} />
             ))}

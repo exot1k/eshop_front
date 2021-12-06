@@ -1,3 +1,20 @@
+.pageLoader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  /* opacity: .5; */
+  width: 100%;
+  height: 100%;
+}
+
+.busy {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+
 .cartList {
   float: left;
   width: calc(85vw - 14em);
@@ -5,6 +22,10 @@
   margin-top: 10px;
   background: #fff;
   border-radius: 15px;
+}
+
+.opacity_0_5 {
+  opacity: 0.5;
 }
 
 .cartItem {
@@ -15,6 +36,16 @@
   margin-left: auto;
   margin-right: auto;
 
+  .itemLoader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 200px;
+    position: absolute;
+
+  }
 
   .cartFrame {
     align-items: center;
@@ -30,6 +61,11 @@
 
 
     .title {
+      width: 50%;
+      white-space: nowrap; /* Запрещаем перенос строк */
+      overflow: hidden; /* Обрезаем все, что не помещается в область */
+      text-overflow: ellipsis;
+
       p {
         font-family: Inter;
         font-style: normal;
@@ -70,11 +106,40 @@
   width: 25vw;
   margin-left: 15px;
   max-width: 300px;
-  height: 400px;
+  height: 200px;
   float: left;
   background: #fff;
   margin-top: 10px;
   border-radius: 15px;
+
+  h4 {
+    border-bottom: 1px solid #d1d1d1;
+    padding-top: 5px;
+    margin-bottom: 5px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: red Hat Display;
+    font-style: normal;
+  }
+
+  button {
+    width: 270px;
+    height: 54px;
+    background: #ebf2ff;
+    border: 2px solid #ebf2ff;
+    box-sizing: border-box;
+    border-radius: 12px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 18px;
+    color: #2264d1;
+    cursor: pointer;
+    margin: 15px;
+  }
+
 }
 
 
