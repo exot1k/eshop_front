@@ -1,9 +1,9 @@
 import {Action, applyMiddleware, combineReducers, createStore} from "redux";
 import thunk, {ThunkAction} from "redux-thunk";
 import authReducer from "./AutchReduser";
-import customerReducer from "./CustomerReduser";
 import shoesReducer from "./ShoesReducer";
 import cartReducer from "./CartReducer";
+import profileReducer from "./ProfileReduser";
 
 type rootReducerType = typeof rootReducer
 export type appStateType = ReturnType<rootReducerType>
@@ -14,9 +14,9 @@ export type baseThunkType<A extends Action, R = Promise<void>> = ThunkAction<R, 
 
 const rootReducer = combineReducers({
     auth: authReducer,
-    customer: customerReducer,
     cart: cartReducer,
-    shoes: shoesReducer
+    shoes: shoesReducer,
+    profile: profileReducer
 })
 const store = createStore(rootReducer, applyMiddleware(thunk));
 

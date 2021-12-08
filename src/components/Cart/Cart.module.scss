@@ -14,132 +14,132 @@
   pointer-events: none;
 }
 
-
-.cartList {
-  float: left;
-  width: calc(85vw - 14em);
-  min-height: 78vh;
-  margin-top: 10px;
-  background: #fff;
-  border-radius: 15px;
-}
-
-.opacity_0_5 {
-  opacity: 0.5;
-}
-
-.cartItem {
-  border-bottom: 2px solid #d1d1d1;
-  padding-top: 5px;
-  margin-bottom: 5px;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-
-  .itemLoader {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 60%;
-    height: 200px;
-    position: absolute;
-
-  }
-
-  .cartFrame {
-    align-items: center;
-    display: flex;
-    overflow: hidden;
-    position: relative;
-    justify-content: space-between;
-
-    img {
-      width: 180px;
-      height: 150px;
-    }
-
-
-    .title {
-      width: 50%;
-      white-space: nowrap; /* Запрещаем перенос строк */
-      overflow: hidden; /* Обрезаем все, что не помещается в область */
-      text-overflow: ellipsis;
-
-      p {
-        font-family: Inter;
-        font-style: normal;
-        font-weight: 400;
-        color: #575757;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
-      }
-
-      h4 {
-
-        font-family: Inter;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 18px;
-        color: #151515;
-        font-weight: 700;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
-      }
-    }
-
-    .itemsButtons {
-      img {
-        width: 20px;
-        cursor: pointer;
-        margin-right: 15px;
-        height: 36px;
-      }
-    }
-  }
-}
-
-
-.cartInfo {
-  width: 25vw;
-  margin-left: 15px;
-  max-width: 300px;
-  height: 200px;
-  float: left;
-  background: #fff;
-  margin-top: 10px;
-  border-radius: 15px;
-
-  h4 {
-    border-bottom: 1px solid #d1d1d1;
-    padding-top: 5px;
-    margin-bottom: 5px;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    font-family: red Hat Display;
-    font-style: normal;
-  }
-
-  button {
-    width: 270px;
-    height: 54px;
-    background: #ebf2ff;
-    border: 2px solid #ebf2ff;
-    box-sizing: border-box;
-    border-radius: 12px;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 15px;
-    line-height: 18px;
-    color: #2264d1;
-    cursor: pointer;
-    margin: 15px;
-  }
-
-}
-
-
+//
+//.cartList {
+//  float: left;
+//  width: calc(85vw - 14em);
+//  min-height: 78vh;
+//  margin-top: 10px;
+//  background: #fff;
+//  border-radius: 15px;
+//}
+//
+//.opacity_0_5 {
+//  opacity: 0.5;
+//}
+//
+//.cartItem {
+//  border-bottom: 2px solid #d1d1d1;
+//  padding-top: 5px;
+//  margin-bottom: 5px;
+//  width: 80%;
+//  margin-left: auto;
+//  margin-right: auto;
+//
+//  .itemLoader {
+//    display: flex;
+//    flex-direction: column;
+//    justify-content: center;
+//    align-items: center;
+//    width: 60%;
+//    height: 200px;
+//    position: absolute;
+//
+//  }
+//
+//  .cartFrame {
+//    align-items: center;
+//    display: flex;
+//    overflow: hidden;
+//    position: relative;
+//    justify-content: space-between;
+//
+//    img {
+//      width: 180px;
+//      height: 150px;
+//    }
+//
+//
+//    .title {
+//      width: 50%;
+//      white-space: nowrap; /* Запрещаем перенос строк */
+//      overflow: hidden; /* Обрезаем все, что не помещается в область */
+//      text-overflow: ellipsis;
+//
+//      p {
+//        font-family: Inter;
+//        font-style: normal;
+//        font-weight: 400;
+//        color: #575757;
+//        text-overflow: ellipsis;
+//        white-space: nowrap;
+//        overflow: hidden;
+//      }
+//
+//      h4 {
+//
+//        font-family: Inter;
+//        font-style: normal;
+//        font-weight: 500;
+//        line-height: 18px;
+//        color: #151515;
+//        font-weight: 700;
+//        text-overflow: ellipsis;
+//        white-space: nowrap;
+//        overflow: hidden;
+//      }
+//    }
+//
+//    .itemsButtons {
+//      img {
+//        width: 20px;
+//        cursor: pointer;
+//        margin-right: 15px;
+//        height: 36px;
+//      }
+//    }
+//  }
+//}
+//
+//
+//.cartInfo {
+//  width: 25vw;
+//  margin-left: 15px;
+//  max-width: 300px;
+//  height: 200px;
+//  float: left;
+//  background: #fff;
+//  margin-top: 10px;
+//  border-radius: 15px;
+//
+//  h4 {
+//    border-bottom: 1px solid #d1d1d1;
+//    padding-top: 5px;
+//    margin-bottom: 5px;
+//    width: 80%;
+//    margin-left: auto;
+//    margin-right: auto;
+//    font-family: red Hat Display;
+//    font-style: normal;
+//  }
+//
+//  button {
+//    width: 270px;
+//    height: 54px;
+//    background: #ebf2ff;
+//    border: 2px solid #ebf2ff;
+//    box-sizing: border-box;
+//    border-radius: 12px;
+//    font-family: Roboto;
+//    font-style: normal;
+//    font-weight: 700;
+//    font-size: 15px;
+//    line-height: 18px;
+//    color: #2264d1;
+//    cursor: pointer;
+//    margin: 15px;
+//  }
+//
+//}
+//
+//

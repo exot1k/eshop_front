@@ -1,26 +1,21 @@
 import * as React from 'react';
 import {useEffect} from 'react';
-import {useDispatch, useSelector} from "react-redux";
-import {checkAuth, logout} from "../../redux/AutchReduser";
-import {appStateType} from "../../redux/ReduxStore";
-import {Redirect} from "react-router-dom";
+import {useDispatch} from "react-redux";
+import {logout} from "../../redux/AutchReduser";
+import {withAuthRedirect} from "../hoc/withAuthRedirect";
+import {getProfileData} from "../../redux/ProfileReduser";
 
 
 const Profile = () => {
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch(checkAuth())
+        // dispatch(getProfileData())
     }, []);
 
     const logoutCustomer = () => {
         dispatch(logout())
     }
 
-    const isAuth = useSelector((state: appStateType) => state.auth.isAuth)
-
-    if (!isAuth) {
-        return <Redirect to={"/login"}/>
-    }
 
     return (
         <div>
@@ -29,5 +24,5 @@ const Profile = () => {
         </div>
     );
 }
-export default Profile
+export default withAuthRedirect(Profile)
 // export default compose<React.ComponentType>(withAuthRedirect)(Profile);
