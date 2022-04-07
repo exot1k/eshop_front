@@ -1,0 +1,43 @@
+.loginBackground {
+  min-height: 85vh;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.loginForm {
+  background-color: white;
+  border-radius: 15px;
+  margin: auto;
+  height: 300px;
+  width: 400px;
+  display: flex;
+  align-items: center;
+}
+
+.inputForm {
+  display: inline-grid;
+  align-items: center;
+  height: 100px;
+  width: 200px;
+  margin: auto;
+
+  button {
+    margin-top: 10px;
+    background: #ebf2ff;
+    border: 2px solid #ebf2ff;
+    box-sizing: border-box;
+    border-radius: 12px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 18px;
+    color: #2264d1;
+    cursor: pointer;
+  }
+}
+.marginTop10{
+  margin-top: 10px;
+}
+

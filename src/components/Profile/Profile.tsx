@@ -4,12 +4,13 @@ import {useDispatch} from "react-redux";
 import {logout} from "../../redux/AutchReduser";
 import {withAuthRedirect} from "../hoc/withAuthRedirect";
 import {getProfileData} from "../../redux/ProfileReduser";
+import styles from "./Profile.module.scss";
 
 
 const Profile = () => {
     const dispatch = useDispatch();
     useEffect(() => {
-        // dispatch(getProfileData())
+        dispatch(getProfileData())
     }, []);
 
     const logoutCustomer = () => {
@@ -19,8 +20,23 @@ const Profile = () => {
 
     return (
         <div>
-            Profile
-            <button onClick={logoutCustomer}></button>
+            <div className={styles.profileBackground}>
+                <div className={styles.profileForm}>
+                    <div className={styles.inputForm}>
+                        <label htmlFor="phone"><b>Номер телефона:</b></label>
+                        <input type="text" placeholder="Телефон" name="phone"/>
+                        <label htmlFor="email"><b>Email:</b></label>
+                        <input type="text" placeholder="Email" name="email"/>
+                        <label htmlFor="firstName"><b>Имя:</b></label>
+                        <input type="text" placeholder="Имя" name="firstName"/>
+                        <label htmlFor="lastName"><b>Фамилия:</b></label>
+                        <input type="text" placeholder="Фамилия" name="lastName"/>
+                        <label htmlFor="address"><b>Адрес:</b></label>
+                        <input type="text" placeholder="Адрес" name="address"/>
+                        <button onClick={() => logoutCustomer()}>Выйти</button>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }

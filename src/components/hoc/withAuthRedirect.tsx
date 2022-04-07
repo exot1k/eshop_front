@@ -33,10 +33,12 @@ import {Redirect} from "react-router-dom";
 export function withAuthRedirect<WCP>(WrappedComponent: React.ComponentType<WCP>) {
     const RedirectComponent: React.FC = (props) => {
         const dispatch = useDispatch();
+
         useEffect(() => {
             dispatch(checkAuth())
-        }, []);
 
+
+        }, []);
         const isAuth = useSelector((state: appStateType) => state.auth.isAuth)
         if (!isAuth) {
             return <Redirect to={"/login"}/>
